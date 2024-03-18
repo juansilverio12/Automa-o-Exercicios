@@ -1,0 +1,53 @@
+int a,b,c,d,e,f,g,botao;
+
+
+    void setup(){  
+  a=3;
+  b=4;
+  c=5;
+  d=6;
+  f=7;
+  e=8;
+  g=9;
+  botao=2;
+  
+    for(int i=3;i<=9;i++){
+  	pinMode(i, OUTPUT);
+  }
+      pinMode(2,INPUT);
+  }
+
+void loop(){
+  
+  int estadobotao = digitalRead(2);
+  
+  if(estadobotao == 1){
+    acionamentosled(1,1,1,1,1,1,0,2000);//0
+    acionamentosled(0,1,1,0,0,0,0,2000);//1
+    acionamentosled(1,1,0,1,1,0,1,2000);//2
+    acionamentosled(1,1,1,1,0,0,1,2000);//3
+    acionamentosled(0,1,1,0,0,1,1,2000);//4
+    acionamentosled(1,0,1,1,0,1,1,2000);//5
+    acionamentosled(1,0,1,1,1,1,1,2000);//6
+    acionamentosled(1,1,1,0,0,0,0,2000);//7
+    acionamentosled(1,1,1,1,1,1,1,2000);//8
+    acionamentosled(1,1,1,1,0,1,1,2000);//9
+    acionamentosled(0,0,0,0,0,0,0,2000);//SAIDA
+  }
+
+
+
+}
+
+void acionamentosled(int a, int b, int c, int d, int e, int f, int g, int tempo){
+
+  digitalWrite(3,a);
+  digitalWrite(4,b);
+  digitalWrite(5,c);
+  digitalWrite(6,d);
+  digitalWrite(7,e);
+  digitalWrite(8,f);
+  digitalWrite(9,g);
+  delay(tempo);
+
+}
